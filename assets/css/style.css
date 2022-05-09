@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif; }
 
 .custom-margin {
   margin-bottom: 200px;
@@ -37,6 +39,24 @@ a {
 .custom-align-center {
   display: flex;
   align-items: center; }
+
+.fixed-feedback {
+  position: fixed;
+  top: 50%;
+  right: -4%;
+  background-color: #ddd;
+  transform: rotate(270deg);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  color: #555; }
+
+header {
+  z-index: 2;
+  background-color: white;
+  position: sticky;
+  top: 0; }
 
 .first-header {
   background-color: black;
@@ -142,7 +162,8 @@ main #showcase {
         border: 1px solid black;
         color: black; }
   #popular-imgs .img-box {
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     #popular-imgs .img-box a {
       position: absolute;
       z-index: 1;
@@ -263,6 +284,47 @@ main #showcase {
       left: 3%;
       top: 10%;
       border: 1px solid black; }
+
+footer .list-footer {
+  margin: 40px 0;
+  line-height: 1.6em; }
+  footer .list-footer h4 {
+    font-size: 18px;
+    font-weight: 650;
+    text-transform: uppercase; }
+  footer .list-footer ul {
+    flex-direction: column; }
+    footer .list-footer ul li a {
+      color: black;
+      font-size: 13px;
+      transform: 0.5s all; }
+      footer .list-footer ul li a:hover {
+        text-decoration: underline; }
+
+footer .terms-footer,
+footer .copyright-footer {
+  background-color: #363738;
+  color: #c8cbcc;
+  font-size: 12px;
+  padding: 24px 124px; }
+
+footer .terms-footer .usa-logo {
+  cursor: pointer; }
+  footer .terms-footer .usa-logo img {
+    width: 15px; }
+  footer .terms-footer .usa-logo span {
+    margin-left: 6px; }
+
+footer .terms-footer .terms ul {
+  gap: 20px; }
+  footer .terms-footer .terms ul li {
+    padding-right: 16px;
+    border-right: 1px solid #c8cbcc; }
+    footer .terms-footer .terms ul li:last-child {
+      border: none; }
+    footer .terms-footer .terms ul li a {
+      color: #c8cbcc;
+      font-size: 12px; }
 
 @media (max-width: 1000px) {
   .third-header .hidden--btns {

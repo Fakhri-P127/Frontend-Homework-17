@@ -1,9 +1,11 @@
 //Globals
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap");
 $primary-dark-color: #333;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
 }
 .custom-margin {
   margin-bottom: 200px;
@@ -44,7 +46,27 @@ a {
   display: flex;
   align-items: center;
 }
+
+.fixed-feedback {
+  position: fixed;
+  top: 50%;
+  right: -4%;
+  background-color: #ddd;
+  transform: rotate(270deg);
+  font-size: 18px;
+  font-weight: 800;
+  padding: 8px 24px;
+  text-transform: uppercase;
+  color: #555;
+}
 // Globals end
+header {
+  z-index: 2;
+  background-color: white;
+  position: sticky;
+  top: 0;
+}
+
 .first-header {
   background-color: black;
   color: white;
@@ -142,6 +164,8 @@ a {
 
 main {
   #showcase {
+    // margin-top: 500px;
+
     background: url("/assets/images/showcase-bg-img.jpg") center/cover no-repeat;
     height: 85vh;
     color: white;
@@ -202,6 +226,7 @@ main {
   &-imgs {
     .img-box {
       position: relative;
+      cursor: pointer;
       a {
         position: absolute;
         z-index: 1;
@@ -362,6 +387,67 @@ main {
       left: 3%;
       top: 10%;
       border: 1px solid black;
+    }
+  }
+}
+
+footer {
+  .list-footer {
+    margin: 40px 0;
+    line-height: 1.6em;
+
+    h4 {
+      font-size: 18px;
+      font-weight: 650;
+      text-transform: uppercase;
+    }
+    ul {
+      flex-direction: column;
+      li {
+        a {
+          color: black;
+          font-size: 13px;
+          transform: 0.5s all;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .terms-footer,
+  .copyright-footer {
+    background-color: #363738;
+    color: #c8cbcc;
+    font-size: 12px;
+    padding: 24px 124px;
+  }
+  .terms-footer {
+    .usa-logo {
+      cursor: pointer;
+      img {
+        width: 15px;
+      }
+      span {
+        margin-left: 6px;
+      }
+    }
+    .terms {
+      ul {
+        gap: 20px;
+
+        li {
+          padding-right: 16px;
+          border-right: 1px solid #c8cbcc;
+          &:last-child {
+            border: none;
+          }
+          a {
+            color: #c8cbcc;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }
