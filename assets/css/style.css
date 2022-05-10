@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "Kanit", sans-serif; }
 
+body {
+  overflow-x: hidden; }
+
 .custom-margin {
   margin-bottom: 200px;
   opacity: 0; }
@@ -23,6 +26,9 @@ a {
   text-decoration: none;
   color: white; }
 
+i {
+  cursor: pointer; }
+
 .light--btn {
   background-color: white;
   color: #333;
@@ -40,6 +46,11 @@ a {
   display: flex;
   align-items: center; }
 
+.close-btn-place {
+  position: absolute;
+  top: 20px;
+  right: 70px; }
+
 .fixed-feedback {
   position: fixed;
   top: 50%;
@@ -56,6 +67,7 @@ header {
   z-index: 2;
   background-color: white;
   position: sticky;
+  width: 100%;
   top: 0; }
 
 .first-header {
@@ -98,6 +110,7 @@ header {
     gap: 30px;
     font-size: 13px;
     padding: 5px;
+    transition: 0.8s all;
     margin-top: 10px; }
     .third-header #categories li a {
       color: #333;
@@ -146,24 +159,30 @@ main #showcase {
       top: 6%;
       border: 1px solid white; }
 
-#popular {
-  margin: 70px 0; }
-  #popular-text {
-    text-align: center;
-    margin-bottom: 30px; }
-  #popular-categories ul {
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 100px; }
-    #popular-categories ul .light--btn {
-      border: 1px solid #ccc;
-      transition: 0.3s all; }
-      #popular-categories ul .light--btn:hover {
-        border: 1px solid black;
-        color: black; }
+#popular-text {
+  text-align: center;
+  margin-bottom: 30px; }
+
+#popular-categories ul {
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 100px; }
+  #popular-categories ul .light--btn {
+    border: 1px solid #ccc;
+    transition: 0.3s all; }
+    #popular-categories ul .light--btn:hover {
+      border: 1px solid black;
+      color: black; }
+
+#popular-imgs {
+  width: 100%; }
   #popular-imgs .img-box {
     position: relative;
+    width: 250px;
     cursor: pointer; }
+    #popular-imgs .img-box img {
+      width: 100%; }
     #popular-imgs .img-box a {
       position: absolute;
       z-index: 1;
@@ -200,19 +219,22 @@ main #showcase {
   #new-arrivals #popular-imgs {
     margin-top: 60px;
     width: 100%; }
-    #new-arrivals #popular-imgs .image span {
-      transition: 0.3s all; }
-    #new-arrivals #popular-imgs .image:hover {
-      border: 1px solid black; }
-      #new-arrivals #popular-imgs .image:hover span {
-        transform: translateY(-20%); }
+    #new-arrivals #popular-imgs .image {
+      width: 100%; }
+      #new-arrivals #popular-imgs .image span {
+        transition: 0.3s all; }
+      #new-arrivals #popular-imgs .image:hover {
+        border: 1px solid black; }
+        #new-arrivals #popular-imgs .image:hover span {
+          transform: translateY(-20%); }
     #new-arrivals #popular-imgs p {
       margin: 0;
       font-weight: 400;
       font-size: 14px; }
     #new-arrivals #popular-imgs .img-box {
       position: relative;
-      margin-bottom: 10px; }
+      margin-bottom: 10px;
+      width: 100%; }
       #new-arrivals #popular-imgs .img-box a {
         position: absolute;
         z-index: 1;
@@ -237,12 +259,16 @@ main #showcase {
         padding: 4px; }
   #new-arrivals #adidas-images {
     cursor: pointer;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    width: 100%; }
     #new-arrivals #adidas-images .img-box {
-      width: 250px; }
+      width: 250px;
+      height: 350px; }
       #new-arrivals #adidas-images .img-box img {
         height: 100%;
         width: 100%; }
+    #new-arrivals #adidas-images .text-box {
+      width: 250px; }
     #new-arrivals #adidas-images p {
       margin: 0; }
     #new-arrivals #adidas-images .shop-link {
@@ -306,33 +332,52 @@ footer .copyright-footer {
   background-color: #363738;
   color: #c8cbcc;
   font-size: 12px;
-  padding: 24px 124px; }
+  padding: 24px; }
 
 footer .terms-footer .usa-logo {
-  cursor: pointer; }
+  cursor: pointer;
+  display: flex;
+  justify-content: center; }
   footer .terms-footer .usa-logo img {
     width: 15px; }
   footer .terms-footer .usa-logo span {
     margin-left: 6px; }
 
-footer .terms-footer .terms ul {
-  gap: 20px; }
-  footer .terms-footer .terms ul li {
-    padding-right: 16px;
-    border-right: 1px solid #c8cbcc; }
-    footer .terms-footer .terms ul li:last-child {
-      border: none; }
-    footer .terms-footer .terms ul li a {
-      color: #c8cbcc;
-      font-size: 12px; }
+footer .terms-footer .terms {
+  text-align: end; }
+  footer .terms-footer .terms ul {
+    gap: 20px; }
+    footer .terms-footer .terms ul li {
+      padding-right: 16px;
+      border-right: 1px solid #c8cbcc; }
+      footer .terms-footer .terms ul li:last-child {
+        border: none; }
+      footer .terms-footer .terms ul li a {
+        color: #c8cbcc;
+        font-size: 12px; }
 
 @media (max-width: 1000px) {
+  #showcase {
+    display: flex;
+    align-items: flex-end; }
   .third-header .hidden--btns {
     display: flex;
     gap: 20px;
     font-size: 30px; }
   .third-header #categories {
-    display: none; }
+    display: none;
+    transition: 0.8s all; }
+  .third-header .hamburger-showup {
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    transition: 0.8s all; }
   .third-header #search-forum {
     display: none; }
   .third-header #user-links li a i {
@@ -349,4 +394,6 @@ footer .terms-footer .terms ul {
     #info h3 {
       margin-bottom: 20px; }
   #subscription {
-    padding: 40px 0; } }
+    padding: 40px 0; }
+  footer .terms-footer .usa-logo {
+    margin-bottom: 24px; } }

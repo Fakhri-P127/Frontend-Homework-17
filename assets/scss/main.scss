@@ -7,6 +7,9 @@ $primary-dark-color: #333;
   box-sizing: border-box;
   font-family: "Kanit", sans-serif;
 }
+body {
+  overflow-x: hidden;
+}
 .custom-margin {
   margin-bottom: 200px;
   opacity: 0;
@@ -26,7 +29,9 @@ a {
   text-decoration: none;
   color: white;
 }
-
+i {
+  cursor: pointer;
+}
 .light--btn {
   background-color: white;
   color: #333;
@@ -47,6 +52,11 @@ a {
   align-items: center;
 }
 
+.close-btn-place {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+}
 .fixed-feedback {
   position: fixed;
   top: 50%;
@@ -64,6 +74,7 @@ header {
   z-index: 2;
   background-color: white;
   position: sticky;
+  width: 100%;
   top: 0;
 }
 
@@ -123,6 +134,8 @@ header {
     gap: 30px;
     font-size: 13px;
     padding: 5px;
+    transition: 0.8s all;
+
     margin-top: 10px;
 
     li {
@@ -202,7 +215,7 @@ main {
 }
 
 #popular {
-  margin: 70px 0;
+  // margin: 70px 0;
   &-text {
     text-align: center;
     margin-bottom: 30px;
@@ -211,6 +224,7 @@ main {
     ul {
       justify-content: center;
       gap: 20px;
+      flex-wrap: wrap;
       margin-bottom: 100px;
       .light--btn {
         border: 1px solid #ccc;
@@ -224,9 +238,14 @@ main {
     }
   }
   &-imgs {
+    width: 100%;
     .img-box {
       position: relative;
+      width: 250px;
       cursor: pointer;
+      img {
+        width: 100%;
+      }
       a {
         position: absolute;
         z-index: 1;
@@ -252,7 +271,7 @@ main {
 #new-arrivals {
   padding: 20px;
   border-top: solid #ccc 1px;
-
+  // width: 100%;
   .left-side {
     display: flex;
     gap: 20px;
@@ -278,6 +297,7 @@ main {
 
     width: 100%;
     .image {
+      width: 100%;
       span {
         transition: 0.3s all;
       }
@@ -296,7 +316,7 @@ main {
     .img-box {
       position: relative;
       margin-bottom: 10px;
-
+      width: 100%;
       a {
         position: absolute;
         z-index: 1;
@@ -328,12 +348,18 @@ main {
   #adidas-images {
     cursor: pointer;
     margin-bottom: 10px;
+    width: 100%;
     .img-box {
       width: 250px;
+      height: 350px;
+
       img {
         height: 100%;
         width: 100%;
       }
+    }
+    .text-box {
+      width: 250px;
     }
     p {
       margin: 0;
@@ -420,11 +446,13 @@ footer {
     background-color: #363738;
     color: #c8cbcc;
     font-size: 12px;
-    padding: 24px 124px;
+    padding: 24px;
   }
   .terms-footer {
     .usa-logo {
       cursor: pointer;
+      display: flex;
+      justify-content: center;
       img {
         width: 15px;
       }
@@ -433,11 +461,13 @@ footer {
       }
     }
     .terms {
+      text-align: end;
       ul {
         gap: 20px;
 
         li {
           padding-right: 16px;
+
           border-right: 1px solid #c8cbcc;
           &:last-child {
             border: none;
@@ -455,6 +485,10 @@ footer {
 // Medias
 
 @media (max-width: 1000px) {
+  #showcase {
+    display: flex;
+    align-items: flex-end;
+  }
   .third-header {
     .hidden--btns {
       display: flex;
@@ -463,6 +497,30 @@ footer {
     }
     #categories {
       display: none;
+      // opacity: 0;
+      transition: 0.8s all;
+
+      // transform: translateX(-200px);
+      // flex-direction: column;
+      // height: 100vh;
+      // position: fixed;
+      // top: 0;
+      // left: 0;
+      // background-color: #fff;
+      // width: 100%;
+      // opacity: 0;
+    }
+    .hamburger-showup {
+      opacity: 1;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #fff;
+      transition: 0.8s all;
     }
     #search-forum {
       display: none;
@@ -506,5 +564,12 @@ footer {
   }
   #subscription {
     padding: 40px 0;
+  }
+  footer {
+    .terms-footer {
+      .usa-logo {
+        margin-bottom: 24px;
+      }
+    }
   }
 }

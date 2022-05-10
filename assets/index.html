@@ -19,6 +19,20 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"
+      integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
@@ -26,7 +40,7 @@
     <header >
       <nav>
         <div class="first-header">
-          <div class="custom-container">
+          <div class="container">
             <div class="row gx-0">
               <div class="col-12 col-lg-4 text-lg-start text-center">
                 <a href="#">BUY MORE, SAVE MORE W/CODE: SAVEMORE</a>
@@ -47,7 +61,7 @@
           </div>
         </div>
         <div class="second-header">
-          <div class="custom-container">
+          <div class="container">
             <div class="col-12 d-lg-block d-none">
               <ul>
                 <li><a href="">help</a></li>
@@ -59,16 +73,20 @@
           </div>
         </div>
         <div class="third-header">
-          <div class="custom-container">
+          <div class="container">
             <div class="row gx-0">
               <div class="col-3">
                 <div class="brand--logo ms-lg-3">
-                  <img src="/assets/images/icon-adidas-logo.svg" alt="" />
+                  <a href="#">
+ <img src="/assets/images/icon-adidas-logo.svg" alt="adidas logo" />
+                  </a>
+                 
                 </div>
               </div>
               <div class="col-5 custom-align-center order-lg-0 order-first">
-                <div class="hidden--btns ms-3">
+                <div class="hidden--btns ">
                   <i id="btnHamburger" class="fa-solid fa-bars"></i>
+                 <i id ="btnClose" class="fa-solid fa-xmark hidden"></i>
                   <i class="fa-solid fa-location-dot"></i>
                 </div>
                 <ul id="categories">
@@ -107,8 +125,8 @@
     <main>
       <!-- Showcase section starts -->
       <section id="showcase">
-        <!-- <div class="custom-container"> -->
-        <div id="showcase-text " class="w-25 ms-3" style="padding-top: 180px">
+        <div class="container">
+        <div id="showcase-text " class="col-12 col-lg-5  mb-5" style="padding-top: 180px">
           <div id="showcase-title">
             <h2>LOVE UNITES</h2>
           </div>
@@ -124,26 +142,26 @@
             </button>
           </div>
         </div>
-        <!-- </div> -->
+        </div>
       </section>
       <!-- Showcase section ends -->
 
       <!-- Popular section starts -->
       <section id="popular">
-        <div class="custom-container">
-          <div id="popular-text" class="mb-5">
+        <div class="container">
+          <div id="popular-text" class="my-5">
             <h2>POPULAR RIGHT NOW</h2>
           </div>
           <div id="popular-categories">
-            <ul>
+            <ul >
               <li><a href="" class="light--btn">ULTRABOOST</a></li>
               <li><a href="" class="light--btn">NMD</a></li>
               <li><a href="" class="light--btn">SAMBA</a></li>
               <li><a href="" class="light--btn">SMITH</a></li>
               <li><a href="" class="light--btn">CLEATS</a></li>
             </ul>
-            <div id="popular-imgs" class="ms-3">
-              <div class="row gy-5">
+            <div id="popular-imgs" class="mb-5">
+              <div class="row gy-5  owl-carousel owl-theme">
                 <div class="col-6 col-lg-3">
                   <div class="img-box">
                     <img src="/assets/images/adilette-lite-slides.jpg" alt="" />
@@ -177,7 +195,7 @@
 
       <!-- New Arrivals section starts -->
       <section id="new-arrivals">
-        <div class="custom-container">
+        <div class="container">
             <div class="row custom-align-center">
 
                 <div class="col-6">
@@ -193,7 +211,7 @@
                 </div>
             </div>
           <div id="popular-imgs">
-              <div class="row  gy-5">
+              <div class="row  gy-5  owl-carousel owl-theme">
                 <div class="col-6 col-lg-3 image">
                   <div class="img-box">
                     <img src="/assets/images/hoodie.jpg" alt="" />
@@ -239,17 +257,20 @@
 
 
              <div id="adidas-images">
-              <div class="row gy-5">
+              <div class="row gy-5 owl-carousel owl-theme">
                 <div class="col-6 col-lg-3 image">
                   <div class="img-box">
                     <img src="/assets/images/white-sneakers.jpg" alt="" />
                     <a href="#" ><i class="fa-regular fa-heart"></i></a>
                
                   </div>
+                  <div class="text-box">
                   <p class="fw-bold">A NEW PERSPECTIVE</p>
                   <p >Explore undiscovered style territory in NMD, by adidas Originals.</p>
                   <a href="#" class="shop-link">SHOP NOW</a>
+                  </div>
                 </div>
+                 
                  <div class="col-6 col-lg-3 image">
                   <div class="img-box">
                     <img src="/assets/images/black.sneakers.jpg" alt="" />
@@ -257,18 +278,22 @@
                 
 
                   </div>
+                  <div class="text-box">
                  <p class="fw-bold">OWN YOUR ENERGY WITH ULTRABOOST 22</p>
                   <p >Run with supreme energy return.</p>
                   <a href="#" class="shop-link">SHOP NOW</a>
+                  </div>
                 </div> <div class="col-6 col-lg-3 image">
                   <div class="img-box">
                     <img src="/assets/images/white-sneakers.jpg" alt="" />
                     <a href="#" ><i class="fa-regular fa-heart"></i></a>
                     
                   </div>
+                  <div class="text-box">
                   <p class="fw-bold">IT'S IN OUR COURT</p>
                   <p >Our new tennis collection made in part with Parley Ocean Plastic.</p>
                   <a href="#"  class="shop-link">SHOP NOW</a>
+                  </div>
                 </div> 
                 <div class="col-6 col-lg-3 image">
                   <div class="img-box">
@@ -276,15 +301,21 @@
                     <a href="#"><i class="fa-regular fa-heart"></i></a>
                     
                   </div>
+                  <div class="text-box">
                  <p class="fw-bold">GIFTING MADE EASY</p>
                   <p >Score Mom a $50 gift card for only $40!!!</p>
                   <a href="#"  class="shop-link">SHOP NOW</a>
+                  </div>
                 </div>
               </div>
             </div> 
         </div>
       </section>
       <!-- New arrivals section ends -->
+
+
+
+
 
       <!-- Info section starts -->
       <section id="info">
@@ -335,9 +366,9 @@
     <footer>
       <div class="container">
         <div class="list-footer">
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-2">
+            <div class="row gy-5">
+              <div class="col-md-1"></div>
+              <div class="col-6 col-md-2">
                 <h4>Products</h4>
                 <ul>
                   <li><a href="">Shoes</a></li>
@@ -350,7 +381,7 @@
                   <li><a href="">Sale</a></li>
                 </ul>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-md-2">
                 <h4>Sports</h4>
                 <ul>
                   <li><a href="">Soccer</a></li>
@@ -365,7 +396,7 @@
                   <li><a href="">Training</a></li>
                 </ul>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-md-2">
                 <h4>Collections</h4>
                 <ul>
                   <li><a href="">adicolor</a></li>
@@ -381,7 +412,7 @@
                   <li><a href="">EQT</a></li>
                 </ul>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-md-2">
                 <h4>Support</h4>
                 <ul>
                   <li><a href="">Help</a></li>
@@ -397,7 +428,7 @@
                   <li><a href="">Promotions</a></li>
                 </ul>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-md-2">
                 <h4>Company Info</h4>
                 <ul>
                   <li><a href="">About Us</a></li>
@@ -414,18 +445,23 @@
                   <li><a href="">Supply Chains Act</a></li>
                 </ul>
               </div>
-              <div class="col-1"></div>
+              <div class="col-md-1"></div>
             </div>
              </div>
         </div>
         <div class="terms-footer">
-          <div class="container d-flex justify-content-between align-items-center">
+          <div class="container">
+            <div class="row">
+
+           <div class=" col-lg-4">
           <div class="usa-logo">
             <img src="/assets/images/us.svg" alt="usa flag">
             <span>USA</span>
           </div>
+           </div>
+           <div class=" col-lg-8">
           <div class="terms">
-            <ul>
+            <ul >
               <li><a href="">Data settings</a></li>
               <li><a href="">Do not sell my personal information</a></li>
               <li><a href="">Privacy Policy</a></li>
@@ -433,6 +469,8 @@
             </ul>
           </div>
           </div>
+          </div>
+           </div>
         </div>
         <div class="copyright-footer">
           <div class="container">
@@ -442,6 +480,16 @@
        
     </footer>
     <!-- Footer ends -->
+        <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="/assets/js/main.js"></script>
   </body>
 </html>
